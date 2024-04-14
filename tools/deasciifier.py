@@ -3,9 +3,9 @@ import torch
 
 class Deasciifier:
   def __init__(self):
-    self.model = pickle.load(open('deasciifier_model_pkl.pickle', 'rb'))
+    self.model = pickle.load(open('tools/models/deasciifier_model_pkl.pickle', 'rb'))
     self.model.eval()
-    self.tokenizer = pickle.load(open('deasciifier_tokenizer_pkl.pickle', 'rb'))
+    self.tokenizer = pickle.load(open('tools/tokenizers/deasciifier_tokenizer_pkl.pickle', 'rb'))
 
   def deasciify(self, sent):
     predicted_tags = self.predict_tags(sent)

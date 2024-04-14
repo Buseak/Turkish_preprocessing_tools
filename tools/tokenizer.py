@@ -3,8 +3,8 @@ import torch
 
 class Tokenizer:
   def __init__(self):
-    self.model = pickle.load(open('tokenizer_model_pkl.pickle', 'rb'))
-    self.tokenizer = pickle.load(open('tokenizer_canine.pickle', 'rb'))
+    self.model = pickle.load(open('tools/models/tokenizer_model_pkl.pickle', 'rb'))
+    self.tokenizer = pickle.load(open('tools/tokenizers/tokenizer_canine.pickle', 'rb'))
 
   def tokenize(self, sent):
     predicted_tags = self.predict_tags(sent)

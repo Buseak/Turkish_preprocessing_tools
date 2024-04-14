@@ -1,18 +1,18 @@
 import pickle
 
-from transformers import AutoTokenizer
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-tokenizer_canine = AutoTokenizer.from_pretrained("Buseak/canine_deasciifier_0305")
+model_spell = AutoModelForSeq2SeqLM.from_pretrained("Buseak/md_mt5_0109_v8")
 
-from transformers import AutoModelForTokenClassification
-
-model_deasciifier = AutoModelForTokenClassification.from_pretrained("Buseak/canine_deasciifier_0305")
+tokenizer = AutoTokenizer.from_pretrained("Buseak/md_mt5_0109_v8")
 
 import pickle
 # create an iterator object with write permission - model.pkl
-with open('deasciifier_model_pkl.pickle', 'wb') as files:
-    pickle.dump(model_deasciifier, files)
+with open('morphological_analyzer_disambiguator_model_pkl.pickle', 'wb') as files:
+    pickle.dump(model_spell, files)
 
-with open('deasciifier_tokenizer_pkl.pickle', 'wb') as files:
-    pickle.dump(tokenizer_canine, files)
+
+
+with open('morphological_tokenizer_pkl.pickle', 'wb') as files:
+    pickle.dump(tokenizer, files)
 

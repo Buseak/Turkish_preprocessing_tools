@@ -3,8 +3,8 @@ import torch
 
 class SentenceSplitter:
   def __init__(self):
-    self.model = pickle.load(open('sentence_splitter_model_pkl.pickle', 'rb'))
-    self.tokenizer = pickle.load(open('sentence_splitter_tokenizer_pkl.pickle', 'rb'))
+    self.model = pickle.load(open('tools/models/sentence_splitter_model_pkl.pickle', 'rb'))
+    self.tokenizer = pickle.load(open('tools/tokenizers/sentence_splitter_tokenizer_pkl.pickle', 'rb'))
 
   def split_sentences(self, sent):
     predicted_tags = self.predict_tags(sent)
